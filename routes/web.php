@@ -21,7 +21,7 @@ Route::get('/', function () {
     return view('principal');
 });
 
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::get('/register', [RegisterController::class, 'index'])->name('register'); //Se nombra la url
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -29,4 +29,5 @@ Route::post('/login', [LoginController::class, 'store']);
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
-Route::get('/muro', [PostController::class, 'index'])->name('post.index'); //Se nombra la url
+//Se transfiere variable
+Route::get('/{user:username}', [PostController::class, 'index'])->name('post.index');

@@ -22,7 +22,7 @@
                 <!-- Si existe un usuario autenticado -->
                 @auth
                     <nav class="flex gap-2 items-center">
-                        <a href="{{ route('post.index') }}" class="font-bold text-gray-600 text-sm">
+                        <a href="{{ route('post.index', ['user' => auth()->user()->username]) }}" class="font-bold text-gray-600 text-sm">
                             <span class="font-normal">{{auth()->user()->username}}</span>
                         </a>
                         <form method="POST" action="{{ route('logout') }}">
