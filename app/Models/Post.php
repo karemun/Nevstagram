@@ -16,4 +16,11 @@ class Post extends Model
         'imagen',
         'user_id',
     ];
+
+    //Definir relacion BD
+    public function user()
+    {
+        //Un Post pertenece a un Usuario, solo muestra esas dos columnas
+        return $this->belongsTo(User::class)->select(['name', 'username']);
+    }
 }

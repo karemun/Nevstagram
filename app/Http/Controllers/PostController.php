@@ -35,13 +35,13 @@ class PostController extends Controller
             'imagen' => 'required',
         ]);
 
-        //Forma 1 de crear
+        /* //Forma 1 de crear
         Post::create([
             'titulo' => $request->titulo,
             'descripcion' => $request->descripcion,
             'imagen' => $request->imagen,
             'user_id' => auth()->user()->id,
-        ]);
+        ]); */
 
         /* //Forma 2 de crear
         $post = new Post;
@@ -50,6 +50,14 @@ class PostController extends Controller
         $post->imagen = $request->imagen;
         $post->user_id = auth()->user()->id;
         $post->save(); */
+
+        //Forma 3 de crear
+        $request->user()->posts()->create([
+            'titulo' => $request->titulo,
+            'descripcion' => $request->descripcion,
+            'imagen' => $request->imagen,
+            'user_id' => auth()->user()->id,
+        ]);
 
         return redirect()->route('posts.index', auth()->user()->username);
     }
