@@ -11,12 +11,13 @@ class PostController extends Controller
     //Revisa que el usuario este autenticado antes de redirigirlo a index
     public function __construct()
     {
-        $this->middleware('auth');
+        //Un usuario no autenticado puede ver publicacion y perfil
+        $this->middleware('auth')->except(['show', 'index']);
     }
 
     public function index(User $user) 
     {
-        $posts = Post::where('user_id', $user->id)->paginate(12); //Obtiene los post del usuario / simplePaginate
+        $posts = Post::where('user_id', $user->id)->paginate(8); //Obtiene los post del usuario / simplePaginate
 
         return view('dashboard', [
             'user' => $user,         //Pasa la informacion del usuario
@@ -68,7 +69,8 @@ class PostController extends Controller
     public function show(User $user, Post $post)
     {
         return view('posts.show', [
-            'post' => $post
+            'post' => $post,
+            'user' => $user,
         ]);
     }
 }

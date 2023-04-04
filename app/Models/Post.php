@@ -23,4 +23,10 @@ class Post extends Model
         //Un Post pertenece a un Usuario, solo muestra esas dos columnas
         return $this->belongsTo(User::class)->select(['name', 'username']);
     }
+
+    public function comentarios()
+    {
+        //Relacion N->M
+        return $this->hasMany(Comentario::class);
+    }
 }
