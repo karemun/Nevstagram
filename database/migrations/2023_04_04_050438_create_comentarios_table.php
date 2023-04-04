@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('comentarios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();    //Almacena el id de usuario
-            $table->foreignId('post_id')->constrained();    //Almacena el id del post
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); //Si se borra el usuario, los comentarios tambien
+            $table->foreignId('post_id')->constrained()->onDelete('cascade'); //Si se borra el post, los comentarios tambien
             $table->string('comentario');
             $table->timestamps();
         });

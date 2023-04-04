@@ -20,6 +20,17 @@
                 <p class="text-sm text-gray-500"> {{ $post->created_at->diffForHumans() }} </p>
                 <p class="mt-5"> {{$post->descripcion}} </p>
             </div>
+
+            <!-- Boton eliminar publicacion -->
+            @auth
+                @if ($post->user_id === auth()->user()->id) <!-- Si el post es del usuario -->
+                    <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                        @method('DELETE') <!-- Metodo spoofing -->
+                        @csrf
+                        <input type="submit" value="Eliminar publicacion" class="bg-red-500 hover:bg-red-600 p-2 rounded text-white font-bold mt-5 cursor-pointer">
+                    </form>
+                @endif
+            @endauth
         </div>
 
         <!-- Seccion Comentarios -->
