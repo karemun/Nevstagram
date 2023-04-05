@@ -29,4 +29,15 @@ class Post extends Model
         //Relacion N->M
         return $this->hasMany(Comentario::class);
     }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function checkLike(User $user)
+    {
+        //Revisa la tabla likes si contiene la columna user_id el user_id
+        return $this->likes->contains('user_id', $user->id);
+    }
 }
