@@ -5,5 +5,8 @@
 @endsection
 
 @section('contenido')
-    Contenido Principal
+    
+    <!-- Componente: se pasa la variable posts -->
+    <x-listar-post :posts="$posts"/>
+
 @endsection
