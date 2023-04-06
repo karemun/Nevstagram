@@ -46,7 +46,7 @@
                 @endauth
 
                 <p class="font-bold"> {{ $post->likes->count() }} <!-- Se muestra el num de likes -->
-                    <span class="font-normal">Likes</span>
+                    <span class="font-normal">@choice('Like|Likes', $post->likes->count())</span>
                 </p> 
             </div>
 
