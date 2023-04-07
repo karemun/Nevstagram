@@ -10,6 +10,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
+        @livewireStyles
     </head>
 
     <body class="bg-gray-100">
@@ -72,5 +73,6 @@
             {{ now()->year }}
         </footer>
 
+        @livewireScripts
     </body>
 </html>
