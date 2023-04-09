@@ -9,7 +9,7 @@ Previews:
 <img src="https://user-images.githubusercontent.com/123043992/230750498-95d45d9a-c169-464c-b350-1db48e497b66.png">
 
 - Index
-<img src="https://user-images.githubusercontent.com/123043992/230751160-68912ea2-0e57-47e1-ba2c-dd72cfb2a13e.png">
+<img src="https://user-images.githubusercontent.com/123043992/230751886-b149477c-b296-42fc-ab88-2553bf4fb399.png">
 
 - Profile
 <img src="https://user-images.githubusercontent.com/123043992/230751401-7fdaf48d-f7e5-4ffa-a6cb-df556dafa6fb.png">
