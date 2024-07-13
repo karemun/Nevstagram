@@ -41,7 +41,7 @@ Route::get('/posts/create', [PostController::class, 'create'])->name('posts.crea
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 
-Route::post('/{user:username}/posts/{post}', [ComentarioController::class, 'store'])->name('comentarios.store');
+//Route::post('/{user:username}/posts/{post}', [ComentarioController::class, 'store'])->name('comentarios.store'); // Se uso livewire
 
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');
 
